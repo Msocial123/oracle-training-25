@@ -1,0 +1,9 @@
+podman  build -t login:v1 .
+   6 podman images
+   7 podman run -d --name login-app -p 80:80 login:v1
+   8 podman ps
+   9 podman exec -it login-app bash
+  10 podman build -t login:v2 .
+  11 podman images
+  12 podman run -d --name login-app-2 -p 81:80 login:v2
+  13 podman ps
