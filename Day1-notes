@@ -1,0 +1,284 @@
+Software Architecture 
+===================
+
+	Ø It will define the structure and interactions between components of a software system
+
+Analogy
+======
+
+	Ø Blue print define the layout of a building
+
+
+Monolithic Architecture 
+===================
+
+	Ø A single unified unit where all functionalities of an app are managed in one codebase and deployed as one executable 
+
+Characteristics 
+============
+
+	Ø Single codebase:- all are exists in one large project or code repo
+	Ø Tight coupling of components :- 
+	Ø Shared database:-  same databse and same tables
+	Ø Single deployment :-the whole app is pkgd and deployed together
+
+
+Microservice Architecture 
+=====================
+
+	Ø The app is going to dividing into small services, loosely coupled services, each responsible for specific functionality 
+
+Characteristics 
+============
+
+	Ø Each service has its own codebase, db and logic:- login, my profile
+	Ø Services communicate via API's
+	Ø Independently deployable 
+
+
+When to use 
+===========
+
+Monolithic 
+=========
+	Ø Project is small or medium 
+	Ø Team is small
+	Ø Deployment is simple
+
+
+Microservices
+============
+
+	Ø Larger & complex 
+	Ø Need for independent scaling 
+	Ø Multiple teams working in parallel 
+	Ø Frequent deployments 
+
+
+Tools stack 
+=========
+
+Monolithic
+=========
+	Ø Spring boot (java)
+	Ø Php
+
+Microservices
+============
+	Ø Container & Container orchestration 
+	Ø REST API
+	Ø gRPC
+	Ø Service mesh (istio)
+	Ø CICD tools: Jenkins, argocd and github auctions 
+
+
+Virtualization 
+===========
+
+	Ø The process of creating a virtual version of computing resources like servers, os, storages and networks rather than physically 
+	Ø It will allow you to run muliple vm's on a single physical machine by abstracting hardware
+
+Why virtualization 
+===============
+
+Key components of virtualization 
+===========================
+
+	1. Host machine :- the actual physical server
+	2. Guest machine:- the vm running on top of the host
+	3. Hypervisor:- software's that manages and runs vm's
+	4. Vm:- a software-based emulation of a computer 
+	5. Vmm:- another name for hypervisors' years 
+
+
+Its a layer between hardware and vm
+
+
+Types of Hypervisor
+==================
+
+	1. Type 1 hypervisor ( Bare Metal) : installed directly on physical hardware, no host o required, u can use in data centres and enterprise servers
+
+Ex:
+==
+
+	1. Vmware
+	2. Microsoft hypervisor-v
+	3. Kvm (kernel based vm)
+	4. Xen
+
+
+	2. Type 2 Hypervisor(Hosted)
+==========================
+
+	Ø Installed on top of an existing os like windows, macos, Linux os
+	Ø It will use mainly for personal use and development /test env
+
+Ex
+==
+
+	Ø Oracle VirtualBox 
+	Ø Vmware workstation
+	Ø Parallels desktops 
+
+
+Key functions of Hypervisor
+=======================
+
+	1. Vm creation:-  allows you to create, delete n configure vm's
+	2. Resource allocation:- Distributes cpu, memory and storage to each vm
+	3. Isolation:- keeps vm's separate and secure
+	4. Monitoring:-  tracks vm's performance and health
+	5. Snapshotting:- take back up images of vm's 
+
+
+Benefits of Using Hypervisor
+=======================
+
+	Ø Run multiple os on one physical machine 
+	Ø Save hardware costs by consolidating servers
+	Ø Improve isolation and security
+	Ø It will support for cloud computing and virtualization platforms 
+
+
+
+Virtualization vs container 
+======================
+
+Feature                          vm's                                                  containers
+
+	1. Virtualization level - hardware - os level
+	2. Os per unit - each vm runs its own os - shares host os kernel 
+	3. Startup time - minutes  - seconds 
+	4. Resource usage - high resources,requires full os - low resources 
+	5. Performance - slower due to overhead - near - native performance 
+	6. Isolation - strong (complete system) - good but shares kernel
+	7. Portability - medium ( os dependency) - high ( run anywhere with container)
+	8. Image size - large (gb's) - small (mb's)
+	9. Security - better isolation - improve with tools 
+	10. Use cases - legacy apps, multi-os, full isolation - microservices' apps, DevOps, cloud-natiive
+
+
+
+Container characteristics 
+====================
+
+	1. Lightweight:- no need full os per app
+	2. Fast boot time:- containers start in secs
+	3. Portables:- runs the same on laptop. Server and cloud
+	4. Isolated:- each container has its own filesystems, processess , network 
+
+
+Docker 
+Podman
+
+	Ø Podman uses OCI:- open container initiative 
+
+
+Docker vs Podman
+===============
+
+Feature  -   docker -  podman
+========================
+
+	1. Architecture - client-server-architecture - daemonless ( no background service)
+	2. Rootless support - partial(experiment) - fully rootless support by default 
+	3. Image - uses OCI- complaint docker images - uses the same OCI - complaint image format
+	4. Container runtime- uses containerd - uses crun(container runtime) or runc( runtime container)
+	5. Compatability - Docker cli - podman cli
+	6. Docker compose  - fully supported - uses separate tool: podman-compose
+	7. User mode - runs container as root by default  - runs containers as non-root by default 
+	8. Daemon required ? - yes -  no
+	9. Security  - good (requires for root access) - better ( rootless is default)
+	10. Learning curve - simple for beginners - slightly more advanced 
+	11. Pod support - no - yes
+
+
+Dockerfile, dockerfile
+
+
+Dockerfile Instructions 
+===================
+
+	1. FROM :- it will specify a base image for ur container app
+
+FROM ubuntu
+
+FROM python3
+
+FROM node:latest,  node:2.1.0
+
+FROM openjdk-1.0.2
+
+	2. MAINTAINER:- it will specify dockerfile author 
+
+MAINTAINER muraliclahan526@gmail.com
+
+WORKDIR:- it will create a working dir in ur container 
+
+WORDKIR /app 
+
+WORKDIR /web
+
+WORKDIR /src/app
+
+	3. COPY :- it will copy all your app src, libraries, dependencies, env and configuration files from host machine to container machine
+
+COPY  .  .
+
+	4. RUN :- it will execute the commands while building the images
+
+RUN apt update -y 
+
+RUN apt install apache2 -y
+
+RUN npm install
+
+RUN pip install 
+
+RUN apt install openjdk17  -y
+
+RUN yum install docker -y
+
+Yum install httpd -y
+
+Yum install git -y
+
+
+	5. EXPOSE: It will specify your app container port number 
+
+EXPOSE  5000
+
+EXPOSE 9000
+
+EXPOSE 8080
+
+EXPOSE 3130
+
+	6. CMD:- it will execute commands while creating the container 
+
+CMD ["node", "app.js"]   
+
+CMD ["node", "server.js"]
+
+	Ø In a dockerfile you have defined 5 CMD instructions, which CMD instruction will firstly 
+
+	7. ENTRYPOINT:- it will specify the main command that will always run when the container start
+
+ENTRYPOINT ["executable", "param1", "param2"]
+
+ENTRYPOINT ["apachectl", "-D", "FOREGROUND"]
+
+
+Apche2 web server
+================
+
+	Ø It will run on port 80 only
+	Ø There is a root directory of apache2 web server is /var/www/html
+
+
+Host-port:container-port
+
+Host-port;- it will decide by the devops engineers 
+Container port:- will decide by development 
+
