@@ -1,0 +1,7 @@
+	1. Podman ps:- to see only running containers
+	2. Podman ps -a:- to see all containers including stopped n running
+	3. Podman restart <container-id or container name>
+	4. Podman exec -it <container-id or container name> bash: to login into the container 
+	5. Podman stop <container-id or container name>: to stop the containers
+	6. Podman pause <container-id or container name>: to pause the container
+    7. Podman unpause  <container-id or container name>: to unpause container
