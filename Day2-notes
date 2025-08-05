@@ -12,3 +12,17 @@
 	12. Podman rm :- To remove only stooped containers
 	13. Podman rm -f : To remove running containers without stopping
 	14. Podman rmi <image-id or image-name> : to remove the podman images
+    	15. Podman rmi $(podman images -q): to delete all unused podman images
+	16. Podman rmi -f $(podman images -q): to delete used images.
+
+==================================================================
+
+Pulling images
+============
+
+podman pull python:bullseye
+
+podman pull busybox:unstable-musl
+
+podman pull nginx:stable-perl
+
