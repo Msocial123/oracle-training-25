@@ -1,0 +1,135 @@
+Why Volumes
+===========
+
+Q:- when we delete running container wt kind of problems we will face?/ wt will happen?
+
+A:- > we will lose app data
+	Ø All the files in the container will be deleted
+	Ø You will get app down time
+
+
+Wt is volume
+===========
+
+	Ø Podman volume is notthing but it’s a directory 
+	Ø We will declare directory as a volume
+	Ø If u delete any container but volume or direction will not delete becz volumes are going to creating out of the file system
+	Ø Better to create a volume along with container
+	Ø Volume will be created in one container
+	Ø You can declare a directory as a volume while creating the container only
+	Ø You can share one volume with n.of containers
+	Ø Volume will not be included when you will update image
+
+Types of volumes
+==============
+
+	1. Anonymous volume:- there is no any name for that volume
+	2. Named volume:- we are going giving a meaningful name to the volume
+	3. Bind volume:- you are going to choosing the location where you want to save the data
+
+
+
+Network in Podman
+================
+
+Wt is network
+============
+
+Purpose of podman networking
+==========================
+
+	Ø Container to container communication
+	Ø Container to host communication 
+	Ø Isolation 
+	Ø Custom network configuration 
+
+Types of podman network
+======================
+
+	1. Bridge (default)
+ =================
+
+	Ø It will create a virtual bridge network for containers
+	Ø Containers on the same network can communication 
+	Ø NAT :- it allows outbound internet access
+	Ø Isolation :yes
+
+
+	2. Host network
+  ==============
+
+	Ø Shares the host network with the containers
+	Ø Containers don’t get their own ip add , they use the host network stack
+	Ø Isolation : no
+
+	3. None
+ =========
+	Ø No network 
+	Ø Container is completely isolated 
+	Ø It is useful for security
+
+	4. Custom network
+  =================
+	Ø Similar to bridge network but user can define subnet, gateway and dns
+
+Drawback of podman or docker
+==========================
+
+	Ø It is difficult to maintain multi containers
+	Ø Containers not support self healing
+	Ø Auto scaling is not supporting
+	Ø Load balancer is not supporting
+
+#========================================================================
+
+Wt is k8s
+========
+
+	Ø It is an open source container management tool and orchestration tool
+
+Cluster 
+======
+
+	Ø Its a combination of nodes
+	Ø Node is a vm
+
+K8s features
+===========
+
+	1. Auto scaling:- a. horizontal a.s:- increasing servers , b. vertical a.s:- cpu, ram, storage
+	2. Auto healing:- pod (container), pod:- it’s a smallest deployable unit
+	3. Load Balancing:- 
+	4. Platform independent:- 
+	5. Fault tolerance:- 
+	6. Rollback:- 
+	7. Health monitoring of containers
+	8. Orchestration 
+
+K8s architecture 
+=============
+
+	Ø K8s follows client server architecture 
+	Ø K8s has two type of nodes:- 1. master node , 2. worker node
+
+	1. Master node / control plane
+  ===========================
+
+	Ø It is responsible to manage entire cluster and it is responsible to make available worker nodes
+ 4 components 
+=============
+
+	1. Api server:- it is an entry point
+	2. Etcd:- it is a database to store entire ur cluster info
+	3. Controller manager:- it will manage or control k8s objects and it will collect data / info from the api server
+	4. Scheduler :- 
+
+
+	2. Worker node:- where app workload is going to manage or app deployed
+
+4 components 
+============
+
+	1. Kubelet:- it is going to managing pod 
+	2. Kube-proxy:- it will collect the network info of entire cluster, ex: pod ip add, nodes ip
+	3. Pods:- it is a smallest deployable unit where container is going to managing 
+	4. Container engine:- it will provide container runtime env

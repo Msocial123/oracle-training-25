@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   ipl-app:
-    image: muralisocial123/ipl-app:v1
+    image: daviddocker526/ipl:latest
     container_name: ipl
     ports:
       - '8084:80'
