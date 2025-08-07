@@ -9,3 +9,9 @@ spec:
       image: muralisocial123/bank:v1
       ports:
         - containerPort: 3000
+
+    - name: web-app
+      image: muralisocial123/nginx:stable-perl
+      ports:
+        - containerPort: 80
+

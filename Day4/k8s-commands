@@ -1,3 +1,7 @@
 kubectl apply -f pod.yaml 
 kubectl get pods 
 kubectl get pods -n murali-ns
+
+10940  kubectl exec -it bank-app -n murali-ns -- /bin/bash
+10941  kubectl exec -it bank-app -c bank -n murali-ns -- /bin/bash
+10945  kubectl exec -it bank-app -c web-app -n murali-ns -- /bin/bash
