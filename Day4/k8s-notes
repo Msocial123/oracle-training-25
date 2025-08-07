@@ -1,0 +1,104 @@
+K8s History 
+=========
+	Ø K8s was created by google in 2013 in Go
+	Ø Initially k8s was not open source
+	Ø But in 2014 google introduced k8s as open source project and donated to CNCF(cloud native computing foundation)
+
+
+Kubectl:- it is a command line interface to talk with cluster
+
+	1. Imperative style:- using commands creating resources is called imperative style(via cli)
+	2. Declarative style:- using manifest files or yaml creating resources is called declarative style
+
+.yml  .yaml
+
+
+Pod name
+Kind info
+Container name
+Container  image
+Container port number
+
+Replicaset 
+
+Pod number
+Pod name
+Lables
+Container name
+Container  image
+Container port number
+
+
+Pod lifecycle 
+===========
+
+	1. Pending 
+ ===========
+
+	Ø Pod is accepted by the cluster but not yet scheduled to any node
+
+	2. Scheduled 
+  ===========
+	Ø The pod has been assigned to a node
+
+	3. Containercreating
+  ==================
+
+	Ø Containers are now being created:- pull (image, create,start)
+
+	4. Running 
+  ==========
+
+	Ø All containers in the pod are up and running
+
+	5. Succeeded
+ =============
+
+	Ø All containers have terminated successfully with exit code 
+
+	6. Failed
+ ========
+
+	Ø One or more containers exited with error and the pod will not be restarted
+
+	7. CrashLoopBackoff
+ ==================
+
+	Ø Your container keeps crashing and restarting reportedly 
+
+Causes
+======
+	Ø Issue is with container image only
+	Ø App bug
+	Ø Invalid env/config
+	Ø Port already in use
+	Ø Database unreachable 
+
+	8. Terminating 
+ ==============
+
+	Ø Pod is being gracefully shutdown
+
+	9. ImagepullBackOff
+  ==================
+
+	Ø Pod is unable to pull the image from the registry 
+
+
+Rolling updates 
+=============
+
+	Ø Rolling update is default deployment strategy 
+	Ø It will update pods gradually 
+	Ø It will ensure zero downtime of ur app
+
+
+	Ø Instead of deleting old pods and creating new pods k8s replaces pods one by one without any zero down time 
+
+
+Why rolling updates
+=================
+
+	Ø High availability 
+	Ø Smooth transition to new version
+	Ø Easy rollback if something goes wrong
