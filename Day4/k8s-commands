@@ -5,3 +5,23 @@ kubectl get pods -n murali-ns
 10940  kubectl exec -it bank-app -n murali-ns -- /bin/bash
 10941  kubectl exec -it bank-app -c bank -n murali-ns -- /bin/bash
 10945  kubectl exec -it bank-app -c web-app -n murali-ns -- /bin/bash
+
+49522  kubectl delete all pods -n suprith-ns
+49523  vi replicaset.yaml
+49524  ls
+49525  cat replicaset.yaml 
+49526  kubectl apply -f replicaset.yaml 
+49527  kubectl delete all --all -n suprith-ns
+49528  kubectl get rs -n murali-ns
+49529  kubectl get pods -n suprith-ns
+49530  kubectl get pods -n murali-ns
+49531  kubectl delete pod my-replica-5vn6v -n murali-ns
+49532  kubectl get pods -n murali-ns
+49533  kubectl delete pods --all -n murali-ns
+49534  kubectl get pods -n murali-ns
+49535  vi replicaset.yaml 
+49536  kubectl apply -f replicaset.yaml 
+49537  kubectl get pods -n murali-ns
+49538  vi replicaset.yaml 
+49539  kubectl apply -f replicaset.yaml 
+49540  kubectl get pods -n murali-ns
