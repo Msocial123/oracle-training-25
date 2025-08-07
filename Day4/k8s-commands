@@ -25,3 +25,13 @@ kubectl get pods -n murali-ns
 49538  vi replicaset.yaml 
 49539  kubectl apply -f replicaset.yaml 
 49540  kubectl get pods -n murali-ns
+18060  kubectl apply -f deployment.yaml 
+18061  kubectl get deployment -n murali-ns
+18062  kubectl delete deployment my-replica -n murali-ns
+18063  kubectl get deployment -n murali-ns
+18064  vi deployment.yaml 
+18065  kubectl apply -f deployment.yaml 
+18066  kubectl get deployment -n murali-ns
+18067  kubectl get rs -n murali-ns
+18068  kubectl get pods -n murali-ns
+18069  kubectl get all -n murali-ns
