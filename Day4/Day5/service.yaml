@@ -11,3 +11,20 @@ spec:
       protocol: TCP
       targetPort: 3000
   type: ClusterIP
+
+---
+
+apiVersion: v1
+kind: Service 
+metadata:
+  name: my-svc
+  namespace: murali-ns
+spec:
+  selector:
+    app: bank
+  ports:
+    - port: 3000
+      protocol: TCP
+      targetPort: 3000
+      nodePort: 30080
+  type: NodePort
