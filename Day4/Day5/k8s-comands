@@ -28,3 +28,19 @@ kubectl get svc -n murali-ns
 61362  kubectl get nodes -o wide
 61363  cp ngnix-serice.yml ngnix-nodeport-service.yml 
 61364  kubectl get pods -n murali-ns -o wide
+
+111516  kubectl get all -n ingress-nginx
+111517  kubectl get deployments -A
+111518  kubectl get all -n ingress-nginx
+111519  ls
+111520  vi ingress.yaml
+111521  ls
+111522  cat ingress.yaml 
+111523  vi ingress.yaml 
+111524  kubectl apply -f ingress.yaml 
+111525  kubectl get ingress -n murali-ns
+111526  ls
+111527  kubectl get all -n murali-ns
+111528  ls
+111529  cat ingress.yaml 
+111530  kubectl describe ingress bank-ingress -n murali-ns
