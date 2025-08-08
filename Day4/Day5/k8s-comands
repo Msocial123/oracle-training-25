@@ -1,0 +1,23 @@
+47249  kubectl set image deployment/my-deployment container-one=muralisocial123/transaction:v1 -n shalini-ns
+47250  kubectl rollout status deployment/my-deployment -n shalini-ns
+47251  kubectl rollout history deployment/my-deployment -n shalini-ns
+47252  ls
+47253  kubectl get all -n shalini-ns
+47254  kubectl describe deployment my-deployment -n murali-ns
+47255  vi deployment-nginx.yml
+47256  kubectl apply -f deployment-nginx.yml 
+47257  kubectl get all -n kavya-ns
+47258  kubectl describe my-deployment-6955d8f4b8-285k5 -n suprith-ns
+47259  ls
+47260  kubectl describe my-deployment-6955d8f4b8-285k5 -n suprith-ns
+47261  history
+47262  kubectl get all -n murali-ns
+47263  kubectl describe pod my-deployment-f9c764dc4-rj6jl -n murali-ns
+47264  kubectl rollout undo deployment my-deployment -n murali-ns
+47265  kubectl rollout history deployment my-deployment -n murali-ns
+47266  kubectl get all -n murali-ns
+47267  kubectl descrbie deployment my-deployment -n murali-ns
+47268  kubectl describe deployment my-deployment -n murali-ns
+47269  kubectl get all -n murali-ns
+47270  history | grep murali-ns
+47271  kubectl describe pod my-deployment-5988cdfffb-vphsc -n murali-ns
