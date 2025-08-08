@@ -23,3 +23,8 @@
 47271  kubectl describe pod my-deployment-5988cdfffb-vphsc -n murali-ns
 
 kubectl get svc -n murali-ns
+
+61361  cat ngnix-serice.yml 
+61362  kubectl get nodes -o wide
+61363  cp ngnix-serice.yml ngnix-nodeport-service.yml 
+61364  kubectl get pods -n murali-ns -o wide
