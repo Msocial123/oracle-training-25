@@ -1,0 +1,72 @@
+263451  helm create bank-chart
+263452  cd ..
+263453  ls
+263454  ls
+263455  cd Chart.yaml 
+263456  ls
+263457  cat Chart.yaml 
+263458  vi Chart.yaml 
+263459  ls
+263460  cd templates/
+263461  ls
+263462  vi deployment.yaml 
+263463  ls
+263464  vi service.yaml 
+263465  ls
+263466  cd ..
+263467  ls
+263468  vi values.yaml 
+263469  ls
+263470  cd templates/
+263471  ls
+263472  rm -rf *
+263473  ls
+263474  vi deployment.yaml
+263475  ls
+263476  cat deployment.yaml 
+263477  vi service.yaml
+263478  ls
+263479  cd ..
+263480  ls
+263481  > values.yaml 
+263482  vi values.yaml 
+263483  ls
+263484  cat values.yaml 
+263485  cd ..
+263486  ls
+263487  helm install bank-release --debug --dry-run bank-chart
+263488  ls
+263489  cd bank-chart/
+263490  ls
+263491  cd templates/
+263492  vi deployment.yaml 
+263493  cd ..
+263494  ls
+263495  helm install bank-release --debug --dry-run bank-chart
+263496  cd bank-chart/
+263497  ls
+263498  vi values.yaml 
+263499  cd ..
+263500  helm install bank-release --debug --dry-run bank-chart
+263501  ls
+263502  helm install bank-releas bank-chart/
+263503  kubectl get ns
+263504  helm install bank-release bank-chart/
+263505  kubectl create ns suku-namespace
+263506  cd bank-chart/
+263507  ls
+263508  vi values.yaml 
+263509  cd ..
+263510  helm install bank-release --debug --dry-run bank-chart
+263511  helm install bank-release bank-chart/
+263512  kubectl get all -n suku-namespace
+263513  ls
+263514  cd bank-chart/
+263515  ls
+263516  vi values.yaml 
+263517  cd ..
+263518  ls
+263519  helm list
+263520  helm upgrade bank-release bank-chart-0.1.0
+263521  helm upgrade bank-release bank-chart
+263522  kubectl get all -n suku-namespace
