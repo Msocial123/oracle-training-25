@@ -44,3 +44,37 @@ kubectl get svc -n murali-ns
 111528  ls
 111529  cat ingress.yaml 
 111530  kubectl describe ingress bank-ingress -n murali-ns
+Svc types
+========
+
+	1. ClusterIP: it will expose the app within the cluster , it is for internal access.
+	2. NodePort:- it will expose  the application on a static port on each nodes ip.
+
+	Ø The app accessible externally but only on specific ports between 30000 to 32767
+
+When to use:
+===========
+
+	Ø It is for only test 
+
+
+	3. LoadBalancer:- it will expose the app within the cluster and out side the cluster by giving external ip add without any port limitations
+	Ø It is a paid not free
+
+
+	4. ExnternalName:
+ ================
+
+
+Flipkart app
+==========
+
+	Ø 9 svc's
+	Ø LB:- 5$ > 9*5=45$ 
+	Ø Client allocated budget is 25$
+
+INGRESS
+=======
+
+	Ø It is open source
+It will require one LB :- 5$,
