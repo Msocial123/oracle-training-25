@@ -21,3 +21,5 @@
 47269  kubectl get all -n murali-ns
 47270  history | grep murali-ns
 47271  kubectl describe pod my-deployment-5988cdfffb-vphsc -n murali-ns
+
+kubectl get svc -n murali-ns
